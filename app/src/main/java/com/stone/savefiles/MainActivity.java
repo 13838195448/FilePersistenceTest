@@ -15,6 +15,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
+/**
+ * 实现了文件存入和写出的功能
+ */
 public class MainActivity extends AppCompatActivity {
 
     private EditText et_input;
