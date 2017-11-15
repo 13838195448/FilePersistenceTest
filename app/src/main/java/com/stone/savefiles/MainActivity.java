@@ -1,6 +1,7 @@
 package com.stone.savefiles;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btn_save;
     private Button btn_restore;
     private TextView tv_show;
+    private Button btn_jump;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         btn_save = findViewById(R.id.btn_save);
         tv_show = findViewById(R.id.tv_show);
         btn_restore = findViewById(R.id.btn_restore);
+        btn_jump = findViewById(R.id.btn_jump);
 
         //保存数据到 SharedPreferences
         btn_save.setOnClickListener(new View.OnClickListener() {
@@ -67,6 +70,18 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+
+        //跳到记住密码页面
+        btn_jump.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
 
         //        et_input = findViewById(R.id.et_input);
 
